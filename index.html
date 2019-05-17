@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,52 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <header>Header</header>
+      <h2>Sign Up</h2>
+      <form id="sign-up">
+        <input type="email" name="credentials[email]" placeholder="EMail" />
+        <input type="password" name="credentials[password]" placeholder="Password" />
+        <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" />
+        <input type="submit" value="Sign Up" />
+      </form>
+
+      <form id="sign-in">
+        <input type="email" name="credentials[email]" placeholder="EMail" />
+        <input type="password" name="credentials[password]" placeholder="Password" />
+        <input type="submit" value="Sign In" />
+      </form>
+
+      <form id='change-pw'>
+        <input type="password" name="passwords[old]" placeholder="Old Password" />
+        <input type="password" name="passwords[new]" placeholder="New Password" />
+        <input type="submit" value="Change Password" />
+      </form>
+
+      <form id='sign-out'>
+        <input type="submit" value="Sign Out" />
+      </form>
+
+      <h3 id="message"></h3>
+      <main>
+        Main
+        <div class="container-fluid gameboard" >
+          <div>Div 1</div>
+            <button id="button1">Button 1</button>
+            <button id="button2">Button 2</button>
+            <button id="button3">Button 3</button>
+          <div>Div 2</div>
+            <button id="button4">Button 4</button>
+            <button id="button5">Button 5</button>
+            <button id="button6">Button 6</button>
+          <div>Div 3</div>
+            <button id="button7">Button 7</button>
+            <button id="button8">Button 8</button>
+            <button id="button9">Button 9</button>
+
+        </div>
+      </main>
+      <footer>
+        Footer
+      </footer>
     </body>
 </html>

@@ -1,1 +1,46 @@
 @import '~bootstrap/scss/bootstrap';
+
+.container-fluid {
+    background-color: black;
+}
+
+.failure {
+  color: #F00;
+}
+
+.gameboard {
+  background-color: hotpink;
+}
+
+.success {
+  color: #0F0;
+}
+
+body {
+  text-align: center;
+}
+
+div {
+  background-color: green;
+}
+
+footer {
+  background-color: blue;
+}
+
+h1 {
+  background-color: yellow;
+  margin: 0;
+}
+
+header {
+  background-color: blue;
+}
+
+main {
+  background-color: #808080;
+}
+
+span {
+  background-color: yellow;
+}
