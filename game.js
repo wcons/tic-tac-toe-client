@@ -38,16 +38,5 @@ module.export = {
   makeMove
 }
 
-
-
-console.log(gameBoard)
-makeMove(0)
-console.log(gameBoard)
-makeMove(5)
-console.log(gameBoard)
-makeMove(2)
-console.log(gameBoard)
-makeMove(6)
-console.log(gameBoard)
 makeMove(1)
 console.log(gameBoard)

@@ -1,10 +1,10 @@
 'use strict'
 
 const store = require('../store')
+const ui = require('./ui')
 
 const makeMove = function (id) {
-
-console.log(store.game)
+  ui.clearMessage()
   const winningMoves = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
   let token = ''
   if (store.game.move % 2 === 0) {
@@ -12,7 +12,14 @@ console.log(store.game)
   } else {
     token = 'o'
   }
-  store.game.cells[id] = token
+  if (store.game.cells[id] !== '') {
+    ui.invalidMove()
+    return false
+  } else {
+    store.game.cells[id] = token
+  }
+  ui.updateButton(id, token)
+  console.log(store.game.cells)
   for (let i = 0; i < winningMoves.length; i++) {
     // i = 3
     const threeIndices = winningMoves[i] // -> [0,3,6]
@@ -28,8 +35,10 @@ console.log(store.game)
     const third = store.game.cells[threeIndices[2]] // 'o'
 
     if (first === second && second === third && first !== '') {
-      console.log('Winner!')
+      ui.displayWinner(token)
       return true
+    } else if (store.game.move === 8) {
+      ui.declareDraw()
     }
   }
   store.game.move++
