@@ -15,4 +15,5 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
 
   $('div.gameboard button').on('click', gameEvents.onButtonClick)
+  $('#new_game').on('submit', gameEvents.onNewGameClick)
 })
