@@ -9,8 +9,6 @@ const onNewGameSuccess = function (responseData) {
   $('.gameboard button').text('')
   store.game = responseData.game
   store.game.move = 0
-  console.log('store is', store)
-  console.log(responseData)
 }
 
 const onNewGameFailure = function (responseData) {

@@ -28,8 +28,19 @@ div {
   background-color: green;
 }
 
+button {
+  border: 5px solid #000000;
+  font-size: 32px;
+  text-align: center;
+  /*padding: 32px 32px;*/
+  width:60px;
+  height:60px;
+  text-transform: capitalize;
+}
+
 footer {
   background-color: blue;
+  height: 50px;
 }
 
 h1 {
