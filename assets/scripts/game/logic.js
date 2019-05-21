@@ -19,17 +19,8 @@ const makeMove = function (id) {
     store.game.cells[id] = token
   }
   ui.updateButton(id, token)
-  console.log(store.game.cells)
   for (let i = 0; i < winningMoves.length; i++) {
-    // i = 3
-    const threeIndices = winningMoves[i] // -> [0,3,6]
-    //
-    // [
-    //   0 => 0,
-    //   1 => 3,
-    //   2 => 6
-    // ]
-    // threeIndices[0]  === 0
+    const threeIndices = winningMoves[i]
     const first = store.game.cells[threeIndices[0]] // 'o'
     const second = store.game.cells[threeIndices[1]] // 'o'
     const third = store.game.cells[threeIndices[2]] // 'o'
@@ -39,6 +30,7 @@ const makeMove = function (id) {
       return true
     } else if (store.game.move === 8) {
       ui.declareDraw()
+      return true
     }
   }
   store.game.move++

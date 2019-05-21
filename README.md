@@ -8,12 +8,10 @@ Future Improvements:
 
   To-do:
     API: Save game after each move
-    Clean console.logs out of code
-    Clean commented out code
     Clean cruft from footer/ui
     Css for gameboard, remove unecessasary divs
     Style gameboard buttons
-    Move New Game to top of gameboard
     Hide board on login until New Game is clicked
+    Lock gameboard when there's a winner
     Deploy finished app
     Finish README

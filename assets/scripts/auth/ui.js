@@ -25,7 +25,6 @@ const onSignInSuccess = responseData => {
   $('.hidden').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
-  console.log('store is', store)
 }
 
 const onSignInFailure = responseData => {
