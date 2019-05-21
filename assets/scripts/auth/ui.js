@@ -1,6 +1,8 @@
 'use strict'
 
 const store = require('../store')
+const api = require('../game/api')
+const ui = require('../game/ui')
 
 const onSignUpSuccess = responseData => {
   $('#message').text('Signed up successfully!')
@@ -22,6 +24,9 @@ const onSignInSuccess = responseData => {
   $('#message').addClass('success')
   $('#sign-in input.formclear').val('')
   store.user = responseData.user
+  api.newGame()
+    .then(ui.onNewGameSuccess)
+    .catch(ui.onNewGameFailure)
   $('.hidden').show()
   $('#sign-up').hide()
   $('#sign-in').hide()

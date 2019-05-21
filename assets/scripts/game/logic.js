@@ -1,5 +1,5 @@
 'use strict'
-
+const api = require('./api')
 const store = require('../store')
 const ui = require('./ui')
 
@@ -7,6 +7,10 @@ const makeMove = function (id) {
   ui.clearMessage()
   const winningMoves = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
   let token = ''
+  if (store.game.over) {
+    return false
+  }
+
   if (store.game.move % 2 === 0) {
     token = 'x'
   } else {
@@ -26,13 +30,20 @@ const makeMove = function (id) {
     const third = store.game.cells[threeIndices[2]] // 'o'
 
     if (first === second && second === third && first !== '') {
+      store.game.over = true
+      api.saveGame()
       ui.displayWinner(token)
       return true
-    } else if (store.game.move === 8) {
+    }
+
+    if (store.game.move === 8 && !(first === second && second === third && first !== '')) {
+      store.game.over = true
+      api.saveGame()
       ui.declareDraw()
       return true
     }
   }
+  api.saveGame()
   store.game.move++
 }
 
