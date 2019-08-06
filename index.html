@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+      </style>
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div id="wrapper">
+      <header>
+        <h1>TIC-TAC-TOE</h1>
+      </header>
+      <form id="sign-up">
+        <input class="formclear" type="email" name="credentials[email]" placeholder="EMail" />
+        <input class="formclear" type="password" name="credentials[password]" placeholder="Password" />
+        <input class="formclear" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" />
+        <input type="submit" value="Sign Up" />
+      </form>
+
+      <form id="sign-in">
+        <input class="formclear" type="email" name="credentials[email]" placeholder="EMail" />
+        <input class="formclear" type="password" name="credentials[password]" placeholder="Password" />
+        <input type="submit" value="Sign In" />
+      </form>
+
+      <form id="change-pw" class="hidden">
+        <input class="formclear" type="password" name="passwords[old]" placeholder="Old Password" />
+        <input class="formclear" type="password" name="passwords[new]" placeholder="New Password" />
+        <input type="submit" value="Change Password" />
+      </form>
+
+      <form id="sign-out" class="hidden">
+        <input type="submit" value="Sign Out" />
+      </form>
+
+      <h3 id="message"></h3>
+      <main class="hidden">
+        <form id='new_game'>
+          <input type="submit" value="New Game">
+        </form>
+        <div class="container-fluid gameboard" >
+          <div></div>
+            <button class="formclear" id="0"></button>
+            <button class="formclear" id="1"></button>
+            <button class="formclear" id="2"></button>
+
+          <div></div>
+            <button class="formclear" id="3"></button>
+            <button class="formclear" id="4"></button>
+            <button class="formclear" id="5"></button>
+
+          <div></div>
+            <button class="formclear" id="6"></button>
+            <button class="formclear" id="7"></button>
+            <button class="formclear" id="8"></button>
+
+
+        </div>
+
+      </main>
+    </div>
+      <footer>
+      </footer>
+    </body>
+</html>
