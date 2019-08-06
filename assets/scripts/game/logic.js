@@ -25,9 +25,9 @@ const makeMove = function (id) {
   ui.updateButton(id, token)
   for (let i = 0; i < winningMoves.length; i++) {
     const threeIndices = winningMoves[i]
-    const first = store.game.cells[threeIndices[0]] // 'o'
-    const second = store.game.cells[threeIndices[1]] // 'o'
-    const third = store.game.cells[threeIndices[2]] // 'o'
+    const first = store.game.cells[threeIndices[0]]
+    const second = store.game.cells[threeIndices[1]]
+    const third = store.game.cells[threeIndices[2]]
 
     if (first === second && second === third && first !== '') {
       store.game.over = true
@@ -35,16 +35,17 @@ const makeMove = function (id) {
       ui.displayWinner(token)
       return true
     }
-
-    if (store.game.move === 8 && !(first === second && second === third && first !== '')) {
-      store.game.over = true
-      api.saveGame()
-      ui.declareDraw()
-      return true
-    }
   }
+
   api.saveGame()
   store.game.move++
+
+  if (store.game.over === false && store.game.move >= 9) {
+    store.game.over = true
+    api.saveGame()
+    ui.declareDraw()
+    return true
+  }
 }
 
 module.exports = {
